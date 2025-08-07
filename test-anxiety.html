@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тест на уровень тревожности</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    main {
+      padding: 40px 36px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 25px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    /* Модальное окно */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 6% auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      text-align: left;
+      border: none;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 4px 0;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 5px;
+      height: 20px;
+      margin-top: 20px;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #4a90e2;
+      width: 0%;
+      border-radius: 5px;
+      transition: width 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Тест на уровень тревожности</h1>
+  </header>
+
+  <main>
+    <p>Пройдите быстрый тест из 10 вопросов, чтобы оценить свой уровень тревожности.</p>
+    <button id="openTestModal">Начать тест</button>
+  </main>
+
+  <!-- Модальное окно с тестом -->
+  <div class="modal" id="testModal">
+    <div class="modal-content">
+      <span class="close" id="closeTestModal">&times;</span>
+      <h2>Вопросы</h2>
+      <form id="anxietyTestForm"></form>
+    </div>
+  </div>
+
+  <!-- Модальное окно с результатом -->
+  <div class="modal" id="resultModal">
+    <div class="modal-content">
+      <span class="close" id="closeResultModal">&times;</span>
+      <h2>Ваш результат</h2>
+      <p id="resultText"></p>
+      <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openTestModal = document.getElementById("openTestModal");
+      const testModal = document.getElementById("testModal");
+      const closeTestModal = document.getElementById("closeTestModal");
+      const resultModal = document.getElementById("resultModal");
+      const closeResultModal = document.getElementById("closeResultModal");
+      const anxietyTestForm = document.getElementById("anxietyTestForm");
+      const resultText = document.getElementById("resultText");
+      const progressBar = document.getElementById("progressBar");
+
+      const questions = [
+        "Я часто чувствую беспокойство без видимой причины.",
+        "Мне трудно расслабиться даже в спокойной обстановке.",
+        "Я часто предчувствую, что что-то плохое случится.",
+        "Мои мысли часто заняты тревожными размышлениями.",
+        "Я испытываю физическое напряжение (напряжение мышц, дрожь).",
+        "Я легко пугаюсь или вздрагиваю от неожиданных звуков.",
+        "Мне трудно сосредоточиться из-за беспокойства.",
+        "Я часто чувствую раздражительность без причины.",
+        "Я испытываю трудности со сном из-за тревожных мыслей.",
+        "Я избегаю ситуаций, которые могут вызвать у меня тревогу."
+      ];
+
+      const options = [
+        { text: "Никогда", value: 0 },
+        { text: "Редко", value: 1 },
+        { text: "Иногда", value: 2 },
+        { text: "Часто", value: 3 },
+        { text: "Всегда", value: 4 }
+      ];
+
+      function renderQuestions() {
+        anxietyTestForm.innerHTML = "";
+        questions.forEach((question, index) => {
+          const fieldset = document.createElement("fieldset");
+          const legend = document.createElement("legend");
+          legend.textContent = `${index + 1}. ${question}`;
+          fieldset.appendChild(legend);
+
+          options.forEach(option => {
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = `q${index}`;
+            input.value = option.value;
+            input.required = true;
+            label.appendChild(input);
+            label.append(` ${option.text}`);
+            fieldset.appendChild(label);
+          });
+
+          anxietyTestForm.appendChild(fieldset);
+        });
+
+        const submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.textContent = "Показать результат";
+        anxietyTestForm.appendChild(submitButton);
+      }
+
+      openTestModal.onclick = () => {
+        testModal.style.display = "block";
+        renderQuestions();
+      };
+
+      closeTestModal.onclick = () => {
+        testModal.style.display = "none";
+      };
+
+      closeResultModal.onclick = () => {
+        resultModal.style.display = "none";
+      };
+
+      window.onclick = (e) => {
+        if (e.target === testModal) testModal.style.display = "none";
+        if (e.target === resultModal) resultModal.style.display = "none";
+      };
+
+      anxietyTestForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let score = 0;
+        for (let i = 0; i < questions.length; i++) {
+          const selected = document.querySelector(`input[name="q${i}"]:checked`);
+          if (selected) score += parseInt(selected.value);
+        }
+
+        let message = "";
+        if (score <= 10) message = "У вас низкий уровень тревожности.";
+        else if (score <= 20) message = "Умеренный уровень тревожности.";
+        else if (score <= 30) message = "Высокий уровень тревожности.";
+        else message = "Очень высокий уровень тревожности.";
+
+        resultText.textContent = message;
+        progressBar.style.width = `${(score / 40) * 100}%`;
+        testModal.style.display = "none";
+        resultModal.style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>

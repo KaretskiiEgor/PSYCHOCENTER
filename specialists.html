@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Специалисты</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: #4a90e2;
+      border-radius: 5px;
+      border: 2px solid white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #e1ecf7;
+      color: #4a90e2;
+      border-color: #e1ecf7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h2 {
+      margin-top: 40px;
+      text-align: center;
+      color: #4a90e2;
+    }
+
+    .specialists {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .specialist-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e1ecf7;
+      transition: all 0.3s ease;
+    }
+
+    .specialist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .specialist-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .specialist-card h3 {
+      margin-top: 15px;
+      font-size: 22px;
+      color: #4a90e2;
+    }
+
+    .specialist-card p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .specialist-card .profile-info {
+      margin-top: 20px;
+    }
+
+    .specialist-card .profile-info div {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 1024px) {
+      .specialists {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .specialists {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <h1>Психологический центр</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="specialists.html">Специалисты</a></li> <!-- Добавленная ссылка -->
+            <li><a href="online-tests.html">Онлайн-тесты</a></li>
+            <li><a href="faq.html">Вопросы и ответы</a></li>
+            <li><a href="articles.php">Статьи</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2>Наши специалисты</h2>
+        <div class="specialists">
+          <div class="specialist-card">
+            <img src="images/specialist1.jpg" alt="Специалист 1">
+            <h3>Анна Иванова</h3>
+            <p>Психолог, стаж более 10 лет, специализация на детской психологии.</p>
+            <div class="profile-info">
+              <div><strong>Опыт работы:</strong> Более 10 лет работы с детьми и подростками.</div>
+              <div><strong>Образование:</strong> Московский государственный университет, диплом психолога, дополнительное образование в области арт-терапии.</div>
+              <div><strong>Профиль лечения:</strong> Дети, подростки, тревожные расстройства, депрессии, школьные проблемы, проблемы с социализацией.</div>
+              <div><strong>Использует подходы:</strong> Когнитивно-поведенческая терапия, арт-терапия, игровая терапия.</div>
+              <div><strong>Сможет помочь:</strong> Помощь детям и подросткам в преодолении тревожности, стрессов, проблем с обучением и самооценкой.</div>
+            </div>
+          </div>
+          <div class="specialist-card">
+            <img src="images/specialist2.jpg" alt="Специалист 2">
+            <h3>Иван Петров</h3>
+            <p>Клинический психолог, стаж 8 лет, помогает справляться с депрессиями и тревожными расстройствами.</p>
+            <div class="profile-info">
+              <div><strong>Опыт работы:</strong> 8 лет в области клинической психологии.</div>
+              <div><strong>Образование:</strong> Московский институт психоанализа, диплом клинического психолога.</div>
+              <div><strong>Профиль лечения:</strong> Депрессии, тревожные расстройства, панические атаки, психосоматические заболевания.</div>
+              <div><strong>Использует подходы:</strong> Когнитивно-поведенческая терапия, психодинамическая терапия, релаксационные техники.</div>
+              <div><strong>Сможет помочь:</strong> Помощь в преодолении депрессий, тревог, стресса, панических атак, восстановление психоэмоционального равновесия.</div>
+            </div>
+          </div>
+          <div class="specialist-card">
+            <img src="images/specialist3.jpg" alt="Специалист 3">
+            <h3>Мария Смирнова</h3>
+            <p>Семейный психолог, опыт работы более 12 лет, помогает парам наладить отношения.</p>
+            <div class="profile-info">
+              <div><strong>Опыт работы:</strong> Более 12 лет в области семейной психологии.</div>
+              <div><strong>Образование:</strong> Санкт-Петербургский государственный университет, диплом семейного психолога.</div>
+              <div><strong>Профиль лечения:</strong> Семейные проблемы, разводы, кризисы, воспитание детей, улучшение отношений в паре.</div>
+              <div><strong>Использует подходы:</strong> Системная терапия, гештальт-терапия, эмоционально-фокусированная терапия.</div>
+              <div><strong>Сможет помочь:</strong> Помощь в решении семейных конфликтов, улучшение отношений, кризисы в отношениях, работа с воспитанием детей.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Психологический центр. Все права защищены.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

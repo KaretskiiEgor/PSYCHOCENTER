@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Статьи — Гармония</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: white;
+      color: #4a90e2;
+      border-radius: 5px;
+      border: 2px solid white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #e1ecf7;
+      border-color: #e1ecf7;
+    }
+
+    main {
+      padding: 40px 36px;
+      flex: 1;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a90e2;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-card {
+      background: #ffffff;
+      border: 1px solid #d0dbe9;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .article-card h3 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+
+    .article-card p {
+      margin-bottom: 10px;
+    }
+
+    .article-card a {
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    .add-button {
+      display: inline-block;
+      background-color: #4a90e2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .add-button:hover {
+      background-color: #357ABD;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Психологический центр</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="specialists.html">Специалисты</a></li>
+        <li><a href="online-tests.html">Онлайн-тесты</a></li>
+        <li><a href="faq.html">Вопросы и ответы</a></li>
+        <li><a href="articles.html">Статьи</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Статьи</h2>
+    <div style="text-align: center;">
+      <a href="add-article.html" class="add-button">+ Добавить статью</a>
+    </div>
+
+    <div class="content">
+      <div class="article-card">
+        <h3>СДВГ у взрослых и детей: что нужно знать</h3>
+        <p>Синдром дефицита внимания и гиперактивности проявляется не только у детей, но и у взрослых. Как его распознать и что с этим делать?</p>
+        <a href="article-adhd.html">Читать статью →</a>
+      </div>
+
+      <div class="article-card">
+        <h3>Тревожность: как справиться с постоянным напряжением</h3>
+        <p>Постоянное беспокойство и тревожные мысли мешают жить? В этой статье мы разберём причины тревожности и способы её снижения.</p>
+        <a href="article-anxiety.html">Читать статью →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Психологический центр. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>

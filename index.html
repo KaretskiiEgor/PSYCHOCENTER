@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Главная</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: #4a90e2;
+      border-radius: 5px;
+      border: 2px solid white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #e1ecf7;
+      color: #4a90e2;
+      border-color: #e1ecf7;
+    }
+
+    .search-container {
+      margin-top: 20px;
+    }
+
+    .search-container input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      width: 250px;
+    }
+
+    .search-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background: #357ab8;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    main.hero {
+      background: #e1ecf7;
+      padding: 60px 0;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .carousel-track img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    button {
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #357ab8;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 10px 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal h3 {
+      font-size: 24px;
+      color: #4a90e2;
+      margin-bottom: 20px;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .modal button {
+      background-color: #4a90e2;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .modal button:hover {
+      background: #357ab8;
+    }
+
+    .modal .close {
+      background: #e1ecf7;
+      color: #4a90e2;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .modal .close:hover {
+      background: #4a90e2;
+      color: white;
+    }
+
+    .modal .confirmation-message {
+      display: none;
+      font-size: 18px;
+      color: #4a90e2;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Психологический центр</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="specialists.html">Специалисты</a></li>
+        <li><a href="online-tests.html">Онлайн-тесты</a></li>
+        <li><a href="faq.html">Вопросы и ответы</a></li>
+        <li><a href="articles.php">Статьи</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <form action="search.html" method="get">
+        <input type="text" name="query" placeholder="Поиск...">
+        <button type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="container">
+    <h2>Мы помогаем вам найти гармонию</h2>
+    <p>Профессиональная психологическая помощь для взрослых и детей</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <img src="images/1.jpg" alt="Слайд 1">
+        <img src="images/2.jpg" alt="Слайд 2">
+        <img src="images/3.jpg" alt="Слайд 3">
+        <img src="images/1.jpg" alt="Слайд 1 копия">
+      </div>
+    </div>
+
+    <button id="openModal">Записаться</button>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Психологический центр. Все права защищены.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Записаться на консультацию</h3>
+    <form id="appointmentForm">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="+7XXXXXXXXXX" required>
+      <button type="submit">Отправить</button>
+    </form>
+    <div class="confirmation-message" id="confirmationMessage">
+      Спасибо за вашу заявку! Мы скоро свяжемся с вами.
+    </div>
+    <button id="closeModal" class="close">Закрыть</button>
+  </div>
+</div>
+
+<script>
+  const openModalButton = document.getElementById('openModal');
+  const closeModalButton = document.getElementById('closeModal');
+  const modal = document.getElementById('modal');
+  const appointmentForm = document.getElementById('appointmentForm');
+  const confirmationMessage = document.getElementById('confirmationMessage');
+
+  openModalButton.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+    appointmentForm.style.display = 'block';
+    confirmationMessage.style.display = 'none';
+    appointmentForm.reset();
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      appointmentForm.style.display = 'block';
+      confirmationMessage.style.display = 'none';
+      appointmentForm.reset();
+    }
+  });
+
+  appointmentForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const phoneInput = appointmentForm.elements["phone"].value.trim();
+    const phoneRegex = /^\+7\d{10}$/;
+
+    if (!phoneRegex.test(phoneInput)) {
+      alert('Неправильно введен телефон. Введите номер в формате +7XXXXXXXXXX');
+      return;
+    }
+
+    const formData = new FormData(appointmentForm);
+
+    fetch('submit.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async response => {
+      if (response.ok) {
+        appointmentForm.style.display = 'none';
+        confirmationMessage.style.display = 'block';
+      } else {
+        const errorText = await response.text();
+        alert('Произошла ошибка: ' + errorText);
+      }
+    })
+    .catch(error => {
+      console.error('Ошибка сети:', error);
+      alert('Сбой соединения. Попробуйте позже.');
+    });
+  });
+
+  const track = document.getElementById('carouselTrack');
+  let position = 0;
+  const slideWidth = track.querySelector('img').clientWidth;
+  const slidesCount = track.querySelectorAll('img').length;
+
+  function moveSlide() {
+    position -= slideWidth;
+    if (Math.abs(position) >= slideWidth * (slidesCount - 1)) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+  }
+
+  setInterval(moveSlide, 4000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Услуги — Гармония</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav li a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: #4a90e2;
+      border-radius: 5px;
+      border: 2px solid white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #e1ecf7;
+      color: #4a90e2;
+      border-color: #e1ecf7;
+    }
+
+    main {
+      padding: 40px 36px;
+      flex: 1;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 32px;
+      color: #4a90e2;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+      min-height: 60vh;
+      align-items: flex-start;
+    }
+
+    .text-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 23%;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      border-top: 4px solid #4a90e2;
+    }
+
+    .text-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .text-box img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      height: 160px;
+    }
+
+    .text-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #4a90e2;
+    }
+
+    .text-box p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 1024px) {
+      .text-box {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .text-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Психологический центр</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="specialists.html">Специалисты</a></li>
+        <li><a href="online-tests.html">Онлайн-тесты</a></li>
+        <li><a href="faq.html">Вопросы и ответы</a></li>
+        <li><a href="articles.php">Статьи</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Наши услуги</h2>
+
+      <div class="grid-container">
+        <div class="text-box">
+          <img src="images/ps3.jpg" alt="Индивидуальная терапия">
+          <h3>Индивидуальная терапия</h3>
+          <p>Процесс работы с психологом, направленный на решение личных проблем и внутренних конфликтов.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps6.jpg" alt="Семейное консультирование">
+          <h3>Семейное консультирование</h3>
+          <p>Наладим диалог между членами семьи, поможем справиться с кризисами и конфликтами.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps1.jpg" alt="Детская и подростковая терапия">
+          <h3>Детская и подростковая терапия</h3>
+          <p>Работаем с тревожностью, агрессией, самооценкой и трудностями в обучении у детей и подростков.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps8.jpg" alt="Психологическая помощь онлайн">
+          <h3>Психологическая помощь онлайн</h3>
+          <p>Консультации в Zoom/Skype — удобно, конфиденциально, из любой точки мира.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps4.jpg" alt="Коучинг и личностный рост">
+          <h3>Коучинг и личностный рост</h3>
+          <p>Развиваем уверенность, лидерские качества, карьерные и личные цели.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps7.jpg" alt="Групповые занятия">
+          <h3>Групповые занятия</h3>
+          <p>Обсуждение общих тем, развитие эмпатии и поддержка в безопасной обстановке.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps2.jpg" alt="Кризисная помощь">
+          <h3>Кризисная помощь</h3>
+          <p>Помогаем справиться с утратами, разводами, жизненными переломными моментами.</p>
+        </div>
+        <div class="text-box">
+          <img src="images/ps5.jpg" alt="Психологическая диагностика">
+          <h3>Психологическая диагностика</h3>
+          <p>Проводим тестирование личности, эмоционального состояния и интеллекта.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Психологический центр. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: white;
+      color: #4a90e2;
+      border-radius: 5px;
+      border: 2px solid white;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #e1ecf7;
+      border-color: #e1ecf7;
+    }
+
+    main {
+      padding: 40px 36px;
+      flex: 1;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a90e2;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.7;
+      background: #ffffff;
+      border: 1px solid #d0dbe9;
+      border-radius: 8px;
+      padding: 30px 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 25px;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      color: #4a90e2;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Психологический центр</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="specialists.html">Специалисты</a></li>
+        <li><a href="online-tests.html">Онлайн-тесты</a></li>
+        <li><a href="faq.html">Вопросы и ответы</a></li>
+        <li><a href="articles.php">Статьи</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="content">
+
+      <div class="faq-item">
+        <h3>Как записаться на консультацию?</h3>
+        <p>Вы можете записаться на консультацию через форму на странице <a href="index.html">Главная</a> или по телефону, указанному на странице с контактами.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Какие специалисты работают в центре?</h3>
+        <p>У нас работают квалифицированные психологи, психотерапевты и семейные консультанты. Подробнее вы можете узнать на странице <a href="specialists.html">Специалисты</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Сколько длится консультация?</h3>
+        <p>Стандартная консультация длится 50 минут. В зависимости от индивидуальных потребностей клиента, продолжительность может быть увеличена по договорённости.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Можно ли пройти консультацию онлайн?</h3>
+        <p>Да, мы предоставляем услуги онлайн-консультаций через Zoom, Skype или другие удобные вам платформы.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Можно ли сохранить анонимность?</h3>
+        <p>Безусловно. Все обращения полностью конфиденциальны. Мы строго соблюдаем этические нормы и законодательство в области защиты персональных данных.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Вы работаете с подростками?</h3>
+        <p>Да, наши специалисты имеют опыт работы с подростками и предоставляют индивидуальные и семейные консультации для подростков от 12 лет и старше.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Какой формат оплаты?</h3>
+        <p>Мы принимаем оплату наличными, по банковской карте и через онлайн-переводы. Все детали вы можете уточнить при записи.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Психологический центр. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
